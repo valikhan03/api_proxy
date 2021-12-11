@@ -15,6 +15,7 @@ func main() {
 
 	authService := proxy.NewService("sign-up")
 	proxy.RegisterServiceEndpoint(router, authService, "sign-up")
+	proxy.RegisterGRPCServiceEndpoints(router, "/new-auction")
 
 	
 	server := &http.Server{

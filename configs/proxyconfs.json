@@ -16,10 +16,10 @@
     },
 
     {
-        "service":"sign-up",
+        "service":"new-auction",
         "host":"localhost:8090",
-        "protocol":"http",
-        "req_path":"/sign-up",
+        "protocol":"grpc",
+        "req_path":"/",
         "method":"POST"
     }
 ]
