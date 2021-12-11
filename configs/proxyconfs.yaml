@@ -1,8 +1,0 @@
-target: localhost:8090
-
-auction_api:
-  new: 
-
-
-auth_service:
-  

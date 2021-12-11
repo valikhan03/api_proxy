@@ -1,0 +1,25 @@
+[
+    {
+        "service":"sign-up",
+        "host":"localhost:8090",
+        "protocol":"http",
+        "req_path":"/sign-up",
+        "method":"POST"
+    },
+
+    {
+        "service":"sign-in",
+        "host":"localhost:8090",
+        "protocol":"http",
+        "req_path":"/sign-in",
+        "method":"POST"
+    },
+
+    {
+        "service":"sign-up",
+        "host":"localhost:8090",
+        "protocol":"http",
+        "req_path":"/sign-up",
+        "method":"POST"
+    }
+]
