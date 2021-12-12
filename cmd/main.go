@@ -13,9 +13,19 @@ func main() {
 	router := gin.New()
 
 
-	authService := proxy.NewService("sign-up")
-	proxy.RegisterServiceEndpoint(router, authService, "sign-up")
-	proxy.RegisterGRPCServiceEndpoints(router, "/new-auction")
+	signUp := proxy.NewService("sign-up")
+	proxy.RegisterServiceEndpoint(router, signUp, "/sign-up")
+
+	signIn := proxy.NewService("sign-in")
+	proxy.RegisterServiceEndpoint(router, signIn, "/sign-in")
+
+	
+
+	api := router.Group("api")
+	api.Use(proxy.ServeMiddleware)
+	{
+		proxy.RegisterGRPCServiceEndpoints(api, "/new-auction")
+	}
 
 	
 	server := &http.Server{

@@ -12,12 +12,11 @@ import (
 
 
 
-
 func NewAuctionRequest(reqData *models.NewAuctionRequestModel, host string) (*models.NewAuctionResponseModel, error){
 	opts := []grpc.DialOption{
         grpc.WithInsecure(),
     }
-	conn, err := grpc.Dial(host, opts...) //127.0.0.1:5300
+	conn, err := grpc.Dial(host, opts...) //example: 127.0.0.1:5300
 	if err != nil{
 		log.Println(err)
 		return nil, err

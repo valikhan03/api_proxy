@@ -16,10 +16,19 @@
     },
 
     {
+        "service":"auth_middleware",
+        "host":"localhost:8090",
+        "protocol":"http",
+        "req_path":"/check-access",
+        "method":"GET"
+    },
+
+    {
         "service":"new-auction",
         "host":"localhost:8090",
         "protocol":"grpc",
         "req_path":"/",
         "method":"POST"
     }
+   
 ]

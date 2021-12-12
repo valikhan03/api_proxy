@@ -32,7 +32,7 @@ func NewAuction(c *gin.Context){
 }
 
 
-func RegisterGRPCServiceEndpoints(router *gin.Engine, path string){
+func RegisterGRPCServiceEndpoints(router *gin.RouterGroup, path string){
 	router.POST(path, NewAuction)
 }
 

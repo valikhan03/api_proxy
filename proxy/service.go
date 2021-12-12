@@ -32,7 +32,24 @@ func (s *Service) ServeService() gin.HandlerFunc {
 	}
 }
 
+
+
 func RegisterServiceEndpoint(router *gin.Engine, service *Service, path string) {
+	switch service.Method{
+	case "POST":
+		router.POST(path, service.ServeService())
+	case "GET":
+		router.GET(path, service.ServeService())
+	case "PUT":
+		router.PUT(path, service.ServeService())
+	case "DELETE":
+		router.DELETE(path, service.ServeService())
+	case "ANY":
+		router.Any(path, service.ServeService())
+	}
+}
+
+func RegisterServiceEndpointWithMiddleware(router *gin.RouterGroup, service *Service, path string) {
 	switch service.Method{
 	case "POST":
 		router.POST(path, service.ServeService())
